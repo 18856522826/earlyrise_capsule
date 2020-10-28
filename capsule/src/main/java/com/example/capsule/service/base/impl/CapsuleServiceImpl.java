@@ -20,6 +20,7 @@ import javax.annotation.Resource;
 public class CapsuleServiceImpl implements CapsuleService {
     @Resource
     private CapsuleMapper capsuleMapper;
+
     /**
      * 插入capsule
      *
@@ -28,5 +29,25 @@ public class CapsuleServiceImpl implements CapsuleService {
     @Override
     public void insertCapsule(Capsule capsule) {
         capsuleMapper.insert(capsule);
+    }
+
+    /**
+     * 修改capsule
+     *
+     * @param capsule 参数
+     */
+    @Override
+    public void updateCapsule(Capsule capsule) {
+        capsuleMapper.update(capsule);
+    }
+
+    /**
+     * 随机查询未读的胶囊
+     * @param mainId 参数
+     * @return 胶囊信息
+     */
+    @Override
+    public Capsule selectCapsule(String mainId) {
+      return  capsuleMapper.select(mainId);
     }
 }

@@ -20,4 +20,17 @@ public interface CapsuleMapper {
      */
     void insert(Capsule capsule);
 
+    /**
+     * 修改capsule信息
+     * @param capsule 参数
+     */
+    void update(Capsule capsule);
+
+    /**
+     * 随机获得一个胶囊
+     * @param mainId 主用户id
+     * @return 胶囊信息
+     */
+    Capsule select(String mainId);
+
 }

@@ -11,5 +11,16 @@ import model.Po.Capsule;
  * @since 1.0
  */
 public interface BaseSysService {
+    /**
+     * 限制添加
+     * @param capsule 入参信息
+     */
     void  limitAdd(Capsule capsule);
+
+    /**
+     * 随机查询
+     * @param mainId 主用户id
+     * @return 胶囊信息
+     */
+    Capsule randSelect(String mainId);
 }

@@ -1,17 +1,15 @@
 package com.example.capsule.controller;
 
+import com.example.capsule.service.BaseSysService;
 import com.example.capsule.service.base.CapsuleService;
 import model.Po.Capsule;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
 /**
- * Notice:
+ * Notice: 基础数据模块
  *
  * @author xuxu
  * @version 1.0
@@ -22,10 +20,23 @@ import javax.annotation.Resource;
 @RequestMapping("BaseSys")
 public class BaseSysController {
     @Resource
-    private CapsuleService capsuleService;
+    private BaseSysService baseSysService;
 
+    /**
+     * 添加胶囊信息
+     * @param capsule 胶囊信息
+     */
     @PostMapping("addCapsule")
     public void addCapsule(@RequestBody Capsule capsule){
-        capsuleService.insertCapsule(capsule);
+        baseSysService.limitAdd(capsule);
+    }
+
+    /**
+     * 随机查询胶囊信息
+     * @param mianId 主用户id
+     */
+    @GetMapping("randSelect")
+    public Capsule randSelect(@RequestParam("id") String mianId){
+       return baseSysService.randSelect(mianId);
     }
 }

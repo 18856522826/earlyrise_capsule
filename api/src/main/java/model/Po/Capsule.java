@@ -16,4 +16,5 @@ public class Capsule {
     private String capsuleContent;
     private String capsuleMainId;
     private String capsuleTime;
+    private int capsuleIf;
 }

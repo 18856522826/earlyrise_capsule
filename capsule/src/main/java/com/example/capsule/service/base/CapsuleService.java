@@ -16,4 +16,17 @@ public interface CapsuleService {
      * @param capsule 参数
      */
     void insertCapsule(Capsule capsule);
+
+    /**
+     * 修改capsule
+     * @param capsule 参数
+     */
+    void updateCapsule(Capsule capsule);
+
+    /**
+     * 随机查询未读的胶囊
+     * @param mainId 参数
+     * @return 胶囊信息
+     */
+    Capsule selectCapsule(String mainId);
 }

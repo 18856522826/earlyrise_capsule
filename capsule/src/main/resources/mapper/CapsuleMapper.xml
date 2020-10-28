@@ -6,4 +6,13 @@
     <insert id="insert" parameterType="model.Po.Capsule">
         insert into capsule(capsuleId,capsuleContent,capsuleMainId) values (#{capsuleId},#{capsuleContent},#{capsuleMainId})
     </insert>
+    <!--更新胶囊状态-->
+    <update id="update" parameterType="model.Po.Capsule">
+        update capsule set capsuleIf =1 where capsuleId =#{capsuleId}
+    </update>
+    <!--随机查询一个胶囊  -->
+    <select id="select" resultType="model.Po.Capsule">
+        select * from capsule where capsuleMainId=#{value} and capsuleIf=0
+        ORDER BY  RAND() limit 1;
+    </select>
 </mapper>
