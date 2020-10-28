@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.capsule.mapper.CapsuleMapper">
+    <insert id="insert" parameterType="model.Po.Capsule">
+        insert into capsule(capsuleId,capsuleContent,capsuleMainId) values (#{capsuleId},#{capsuleContent},#{capsuleMainId})
+    </insert>
+</mapper>
